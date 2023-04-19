@@ -8,7 +8,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-import { get, getDatabase, ref, remove, set } from "firebase/database";
+import { child, get, getDatabase, ref, remove, set } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -60,5 +60,34 @@ export async function addNewPost(post) {
     ...post,
     id,
     date: date.toLocaleDateString(),
+  });
+}
+
+// get
+export async function getAllPosts() {
+  return get(ref(database, "posts")).then((snapshot) => {
+    if (snapshot.exists()) {
+      //console.log(snapshot);
+      return Object.values(snapshot.val());
+    }
+    return [];
+  });
+}
+
+//const dbRef = ref(getDatabase(app));
+
+// export async function getPost(id) {
+//   return get(child(dbRef, `posts/${id}`)).then((snapshot) => {
+//     if (snapshot.exists()) {
+//       console.log(snapshot);
+//       return snapshot.val();
+//     }
+//     return [];
+//   });
+// }
+export async function getPost(postId) {
+  return get(ref(database, `posts/${postId}`)).then((snapshot) => {
+    const items = snapshot.val() || {};
+    return items;
   });
 }
