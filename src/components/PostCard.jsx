@@ -13,18 +13,18 @@ export default function PostCard({
           onClick={() => {
             navigate(`/post/${id}`);
           }}
-          className="truncate text-xl font-bold max-w-sm cursor-pointer hover:scale-105"
+          className="truncate text-xl font-bold max-w-md cursor-pointer border-white border-4 transition delay-150 bg-white hover:border-b-green-300 duration-300"
         >
           {title}
         </h3>
-        <p className="mx-2 w-[90px] text-gray-500">{date}</p>
       </div>
       <div>
         <p className="m-2 px-2 py-1 max-w-min text-sm text-black font-semibold rounded-2xl bg-green-300">
           {category}
         </p>
       </div>
-      <p className="px-2 mb-4">{`${description}`}</p>
+      <p className="px-2">{`${description}`}</p>
+      <p className="mx-2 py-6 w-[90px] text-gray-500">{date}</p>
     </div>
   );
 }

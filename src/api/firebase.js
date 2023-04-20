@@ -40,7 +40,7 @@ export function onUserStateChange(callback) {
 
 const database = getDatabase(app);
 
-// admin계정인지 아닌지 확인하는 함수
+// admin계정인지 아닌지 확인
 function adminUser(user) {
   return get(ref(database, "admins")).then((snapshot) => {
     if (snapshot.exists()) {

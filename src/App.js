@@ -11,6 +11,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <AuthContextProvider>
         <Navbar />
+        <div className="my-20"></div>
         <Outlet />
       </AuthContextProvider>
     </QueryClientProvider>

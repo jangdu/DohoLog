@@ -20,8 +20,6 @@ const router = createBrowserRouter([
     errorElement: <NotFound />,
     children: [
       { index: true, path: "/", element: <Home /> },
-      // { path: "/products", element: <AllProducts /> },
-
       {
         path: "/posts",
         element: <AllPosts />,
@@ -38,17 +36,15 @@ const router = createBrowserRouter([
         path: "/post/:id",
         element: <PostDetail />,
       },
-      { path: "/contact", element: <Contact /> },
+      {
+        path: "/contact",
+        element: (
+          <ProtectedRoute>
+            <Contact />
+          </ProtectedRoute>
+        ),
+      },
       { path: "/about", element: <About /> },
-      // { path: "/products/:id", element: <ProductDetail /> },
-      // {
-      //   path: "/carts",
-      //   element: (
-      //     <ProtectedRoute>
-      //       <MyCart />
-      //     </ProtectedRoute>
-      //   ),
-      // },
     ],
   },
 ]);
