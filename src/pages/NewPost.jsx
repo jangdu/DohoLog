@@ -7,13 +7,11 @@ export default function NewPost() {
   const [newPost, setNewPost] = useState({});
   const [isUploading, setIsUpLoading] = useState(false);
   const [success, setSuccess] = useState();
-  const [textarea, setTextarea] = useState(``);
 
   const handleResizeHeight = (e) => {
     e.target.style.height = "auto";
     e.target.style.height = e.target.scrollHeight + "px";
-    setTextarea(e.target.value);
-    // console.log(e.target.value);
+    handleChange(e);
   };
 
   const handleChange = (e) => {
@@ -24,8 +22,7 @@ export default function NewPost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsUpLoading(true);
-    await setNewPost({ ...newPost, content: `${textarea}` });
-    console.log(newPost);
+    await setNewPost({ ...newPost });
     await addNewPost(newPost);
     setIsUpLoading(false);
   };
@@ -40,6 +37,7 @@ export default function NewPost() {
             type="text"
             placeholder="title"
             name="title"
+            value={newPost.title ?? ""}
             required
             onChange={handleChange}
           />
@@ -47,6 +45,7 @@ export default function NewPost() {
             type="text"
             placeholder="description"
             name="description"
+            value={newPost.description ?? ""}
             required
             onChange={handleChange}
           />
@@ -54,6 +53,7 @@ export default function NewPost() {
             type="text"
             placeholder="category"
             name="category"
+            value={newPost.category ?? ""}
             required
             onChange={handleChange}
           />
@@ -62,6 +62,7 @@ export default function NewPost() {
             className="p-4 my-4 resize-none focus:border-none focus:outline-none"
             placeholder="내용을 입력하세요"
             name="content"
+            value={newPost.content ?? ""}
             onChange={handleResizeHeight}
             required
           />
@@ -73,7 +74,7 @@ export default function NewPost() {
         </form>
       </div>
       <div className="mx-2 mt-40 p-4">
-        <MarkdownViewer content={`${textarea}`} />
+        <MarkdownViewer content={`${newPost.content}`} />
       </div>
     </section>
   );
