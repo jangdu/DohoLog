@@ -27,10 +27,15 @@ export default function NewPost() {
     setIsUpLoading(false);
   };
   return (
-    <section className="flex w-full text-center">
+    <section className="flex w-full mx-auto text-center">
+      {isUploading && (
+        <div>
+          <p>업로드중 ... </p>
+        </div>
+      )}
       <div className="p-4">
         <form
-          className="flex flex-col max-w-xl w-[80vw] mx-auto"
+          className="flex flex-col w-[80vw] max-w-xl mx-auto"
           onSubmit={handleSubmit}
         >
           <input
@@ -66,10 +71,11 @@ export default function NewPost() {
             onChange={handleResizeHeight}
             required
           />
-          <div className="fixed bottom-0 right-28 h-16 ">
-            <button text={"저장"} className="font-bold">
-              저장하기
-            </button>
+          <div className="fixed font-bold bottom-0 right-28 h-16 ">
+            <Button
+              text={isUploading ? "uploading..." : "저장"}
+              disabled={isUploading}
+            />
           </div>
         </form>
       </div>
