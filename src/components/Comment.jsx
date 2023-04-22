@@ -14,8 +14,8 @@ export default function Comment({ id }) {
     commentsEl.current.appendChild(scriptEl);
   });
   return (
-    <>
+    <div className="my-6">
       <div ref={commentsEl}></div>
-    </>
+    </div>
   );
 }
