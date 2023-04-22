@@ -4,6 +4,7 @@ import { getPost } from "../api/firebase";
 import { useQuery } from "@tanstack/react-query";
 import MarkdownViewer from "../components/MarkdownViewer";
 import LoadingUi from "../components/ui/LoadingUi";
+import Comment from "../components/Comment";
 
 export default function PostDetail() {
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function PostDetail() {
           <p className="text-xl font-bold">{post.description}</p>
           <div className="w-60 border-2 border-green-300 mt-4 mb-8 self-center" />
           <MarkdownViewer content={post.content} />
+          <Comment id={post.id} />
         </section>
       )}
     </div>

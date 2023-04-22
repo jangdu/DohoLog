@@ -35,7 +35,7 @@ export default function Posts() {
         />
         <PostGrid posts={posts} selected={selected} />
 
-        <div className="fixed bottom-0 right-12 md:right-28 h-16 text-4xl cursor-pointer hover:scale-105">
+        <div className="fixed bottom-8 right-12 md:right-28 text-4xl md:text-5xl rounded-full bg-white transition delay-75 duration-300 cursor-pointer text-green-300 hover:text-green-500">
           <FaArrowAltCircleUp onClick={window.scrollTo(0, 0)} />
         </div>
       </div>
