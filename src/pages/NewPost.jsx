@@ -6,7 +6,6 @@ import MarkdownViewer from "../components/MarkdownViewer.jsx";
 export default function NewPost() {
   const [newPost, setNewPost] = useState({});
   const [isUploading, setIsUpLoading] = useState(false);
-  const [success, setSuccess] = useState();
 
   const handleResizeHeight = (e) => {
     e.target.style.height = "auto";
@@ -27,12 +26,8 @@ export default function NewPost() {
     setIsUpLoading(false);
   };
   return (
-    <section className="flex w-full mx-auto text-center">
-      {isUploading && (
-        <div>
-          <p>업로드중 ... </p>
-        </div>
-      )}
+    <section className="flex w-full mx-auto">
+      {isUploading && <p>업로드중 ... </p>}
       <div className="p-4">
         <form
           className="flex flex-col w-[80vw] max-w-xl mx-auto"

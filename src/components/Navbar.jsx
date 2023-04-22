@@ -7,8 +7,11 @@ import User from "./User";
 export default function Navbar() {
   const { user, login, logout } = useAuthContext();
   return (
-    <header className="fixed top-0 w-full flex justify-between border-b bg-white border-gray-300 px-4 py-2">
-      <Link to={"/"} className="flex items-center text-2xl font-bold">
+    <header className="fixed top-0 w-full z-10 flex justify-between bg-white px-4 py-2 md:px-8 md:py-4">
+      <Link
+        to={"/"}
+        className="flex items-center text-3xl md:text-4xl font-bold"
+      >
         <h1>DuhoLog</h1>
       </Link>
       <nav className="flex items-center gap-4 font-semibold">
@@ -19,13 +22,12 @@ export default function Navbar() {
         <Link to="/about">
           <Button text={"About"} />
         </Link>
-        {user && (
+        {/* {user && (
           <Link to="/contact">
             <Button text={"Contact"} />
           </Link>
-        )}
+        )} */}
 
-        {user && <User user={user} />}
         {(!user && <Button onClick={login} text="Login" />) || (
           <Button onClick={logout} text="Logout" />
         )}
@@ -35,6 +37,7 @@ export default function Navbar() {
           </Link>
         )) ||
           null}
+        {user && <User user={user} />}
       </nav>
     </header>
   );
