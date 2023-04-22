@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PostCard from "./PostCard";
 
 const ALL_POSTS = "All_Posts";

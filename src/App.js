@@ -12,9 +12,12 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <AuthContextProvider>
         <Navbar />
-        <div className="my-20"></div>
-        <Outlet />
-        <Footer />
+        <div className="flex flex-col h-[100vh]">
+          <div className="grow my-20">
+            <Outlet />
+          </div>
+          <Footer />
+        </div>
       </AuthContextProvider>
     </QueryClientProvider>
   );
