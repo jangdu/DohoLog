@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "./ui/Button";
 
 export default function Profile() {
   return (
@@ -11,13 +12,13 @@ export default function Profile() {
         className="rounded-full object-contain w-32 h-32"
       ></img>
       <div className="ml-3 overflow-hidden items-center">
-        <h2 className="text-xl font-bold my-2">{"jangdu"}</h2>
-        <h3 className="font-semibold">FrontEnd Engineer</h3>
+        <h2 className="text-xl font-bold my-2 ">{"jangdu"}</h2>
+        <h3 className="font-semibold border-t-4 border-t-green-300">
+          FrontEnd Engineer
+        </h3>
         <p className="text-sm">이거 만들면서 더 성장</p>
-        <Link to={"/contact"}>
-          <button className="mt-2 rounded-2xl font-bold bg-green-300 px-3 py-1 hover:bg-green-400">
-            Contact Me
-          </button>
+        <Link to={"/contact"} className="mt-2 font-bold">
+          <Button text={"Contact Me"}></Button>
         </Link>
       </div>
     </section>

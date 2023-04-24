@@ -25,7 +25,7 @@ export default function Posts() {
   // console.log(categories);
   return (
     posts && (
-      <div className="flex flex-col p-6 max-w-4xl mx-auto">
+      <div className="flex flex-col max-w-4xl mx-auto">
         {isLoading && <LoadingUi />}
         {error && <p>{error}</p>}
         <Categories
