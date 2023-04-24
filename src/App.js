@@ -13,7 +13,7 @@ function App() {
       <AuthContextProvider>
         <Navbar />
         <div className="flex flex-col h-[100vh]">
-          <div className="grow my-20">
+          <div className="grow my-12 md:my-20">
             <Outlet />
           </div>
           <Footer />
