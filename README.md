@@ -3,7 +3,7 @@
 > 아직 미완성 (2023.05.21)
 
 ## 링크
-[블로그 주소]([https://blog.naver.com/ndb796](https://jangdu-85756.web.app/post/2ca49397-2c07-4de7-8c9d-aa1049eba023))
+* [블로그 주소](https://blog.naver.com/ndb796](https://jangdu-85756.web.app/post/2ca49397-2c07-4de7-8c9d-aa1049eba023)
 
 ## Description
 
