@@ -25,7 +25,11 @@ export default function Posts() {
   // console.log(categories);
   return (
     posts && (
+<<<<<<< HEAD
       <div className="flex flex-col max-w-4xl mx-auto">
+=======
+      <div className="flex flex-col p-6 max-w-4xl mx-auto">
+>>>>>>> 948cf4b (init project)
         {isLoading && <LoadingUi />}
         {error && <p>{error}</p>}
         <Categories
@@ -35,7 +39,11 @@ export default function Posts() {
         />
         <PostGrid posts={posts} selected={selected} />
 
+<<<<<<< HEAD
         <div className="fixed bottom-8 right-12 md:right-28 text-4xl md:text-5xl rounded-full bg-white transition delay-75 duration-300 cursor-pointer text-green-300 hover:text-green-500">
+=======
+        <div className="fixed bottom-0 right-12 md:right-28 h-16 text-4xl cursor-pointer hover:scale-105">
+>>>>>>> 948cf4b (init project)
           <FaArrowAltCircleUp onClick={window.scrollTo(0, 0)} />
         </div>
       </div>

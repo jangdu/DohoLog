@@ -14,7 +14,10 @@
 # misc
 .DS_Store
 .env.local
+<<<<<<< HEAD
 .env
+=======
+>>>>>>> 948cf4b (init project)
 .env.development.local
 .env.test.local
 .env.production.local

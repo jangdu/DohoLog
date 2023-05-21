@@ -51,6 +51,7 @@ export default function PostDetail() {
             <MarkdownViewer content={post.content} />
             <Comment id={post.id} />
           </div>
+
         </section>
       )}
     </div>

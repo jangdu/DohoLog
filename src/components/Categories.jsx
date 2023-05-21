@@ -1,6 +1,10 @@
 export default function Categories({ categories, selected, onClick }) {
   return (
+<<<<<<< HEAD
     <div className="text-center px-8 w-full mx-auto max-w-lg">
+=======
+    <div className="text-center p-4 w-full mx-auto">
+>>>>>>> 948cf4b (init project)
       <h1 className="text-lg font-bold border-b my-2 p-2">Category</h1>
       <ul className="flex flex-row overflow-scroll py-4">
         {categories.map((category) => (

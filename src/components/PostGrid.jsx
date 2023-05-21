@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React from "react";
+=======
+import React, { useState } from "react";
+>>>>>>> 948cf4b (init project)
 import PostCard from "./PostCard";
 
 const ALL_POSTS = "All_Posts";
