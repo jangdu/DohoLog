@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import React from "react";
-=======
-import React, { useState } from "react";
->>>>>>> 948cf4b (init project)
 import PostCard from "./PostCard";
 
 const ALL_POSTS = "All_Posts";
@@ -10,10 +6,7 @@ const ALL_POSTS = "All_Posts";
 export default function PostGrid({ posts, selected }) {
   console.log(selected);
 
-  const filteredPosts =
-    selected === ALL_POSTS
-      ? posts
-      : posts.filter((post) => post.category === selected);
+  const filteredPosts = selected === ALL_POSTS ? posts : posts.filter((post) => post.category === selected);
 
   return (
     <section>

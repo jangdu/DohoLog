@@ -6,10 +6,6 @@ import MarkdownViewer from "../components/MarkdownViewer.jsx";
 export default function NewPost() {
   const [newPost, setNewPost] = useState({});
   const [isUploading, setIsUpLoading] = useState(false);
-<<<<<<< HEAD
-=======
-  const [success, setSuccess] = useState();
->>>>>>> 948cf4b (init project)
 
   const handleResizeHeight = (e) => {
     e.target.style.height = "auto";
@@ -30,60 +26,16 @@ export default function NewPost() {
     setIsUpLoading(false);
   };
   return (
-<<<<<<< HEAD
     <section className="flex w-full mx-auto">
       {isUploading && <p>업로드중 ... </p>}
-=======
-    <section className="flex w-full mx-auto text-center">
-      {isUploading && (
-        <div>
-          <p>업로드중 ... </p>
-        </div>
-      )}
->>>>>>> 948cf4b (init project)
       <div className="p-4">
-        <form
-          className="flex flex-col w-[80vw] max-w-xl mx-auto"
-          onSubmit={handleSubmit}
-        >
-          <input
-            type="text"
-            placeholder="title"
-            name="title"
-            value={newPost.title ?? ""}
-            required
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="description"
-            name="description"
-            value={newPost.description ?? ""}
-            required
-            onChange={handleChange}
-          />
-          <input
-            type="text"
-            placeholder="category"
-            name="category"
-            value={newPost.category ?? ""}
-            required
-            onChange={handleChange}
-          />
-          <textarea
-            rows={1}
-            className="p-4 my-4 resize-none focus:border-none focus:outline-none"
-            placeholder="내용을 입력하세요"
-            name="content"
-            value={newPost.content ?? ""}
-            onChange={handleResizeHeight}
-            required
-          />
+        <form className="flex flex-col w-[80vw] max-w-xl mx-auto" onSubmit={handleSubmit}>
+          <input type="text" placeholder="title" name="title" value={newPost.title ?? ""} required onChange={handleChange} />
+          <input type="text" placeholder="description" name="description" value={newPost.description ?? ""} required onChange={handleChange} />
+          <input type="text" placeholder="category" name="category" value={newPost.category ?? ""} required onChange={handleChange} />
+          <textarea rows={1} className="p-4 my-4 resize-none focus:border-none focus:outline-none" placeholder="내용을 입력하세요" name="content" value={newPost.content ?? ""} onChange={handleResizeHeight} required />
           <div className="fixed font-bold bottom-0 right-28 h-16 ">
-            <Button
-              text={isUploading ? "uploading..." : "저장"}
-              disabled={isUploading}
-            />
+            <Button text={isUploading ? "uploading..." : "저장"} disabled={isUploading} />
           </div>
         </form>
       </div>
