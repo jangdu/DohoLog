@@ -1,13 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { v4 as uuid } from "uuid";
 import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  signInWithPopup,
-  GoogleAuthProvider,
-  signOut,
-  onAuthStateChanged,
-} from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged } from "firebase/auth";
 import { child, get, getDatabase, ref, remove, set } from "firebase/database";
 
 const firebaseConfig = {
@@ -74,17 +68,6 @@ export async function getAllPosts() {
   });
 }
 
-//const dbRef = ref(getDatabase(app));
-
-// export async function getPost(id) {
-//   return get(child(dbRef, `posts/${id}`)).then((snapshot) => {
-//     if (snapshot.exists()) {
-//       console.log(snapshot);
-//       return snapshot.val();
-//     }
-//     return [];
-//   });
-// }
 export async function getPost(postId) {
   return get(ref(database, `posts/${postId}`)).then((snapshot) => {
     const items = snapshot.val() || {};
